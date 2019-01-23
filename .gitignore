@@ -13,7 +13,6 @@
 # JSG
 appsettings.json
 launchsettings.json
-*.sln
 *.DS_Store
 
 # User-specific files (MonoDevelop/Xamarin Studio)
