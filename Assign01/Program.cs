@@ -10,7 +10,8 @@ namespace Assign01
     class Program
     {
         /// <summary>
-        /// Assign 01 Tyler Gardella
+        /// Assign 01
+        /// Tyler Gardella
         /// Reading and editing a file that displays information about a ticket.
         /// 
         /// Current problems:
@@ -44,7 +45,7 @@ namespace Assign01
                             // convert string to array
                             string[] arr = line.Split(',');
                             // display array data
-                            Console.WriteLine("{0,-8}|{1,-20}|{2,-8}|{3,-9}|{4,-16}|{5,-16}|{6,-20}", arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
+                            Console.WriteLine("{0,-10}|{1,-20}|{2,-10}|{3,-10}|{4,-20}|{5,-20}|{6,-30}", arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
                         }
                     }
                     else
