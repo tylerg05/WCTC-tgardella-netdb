@@ -22,7 +22,7 @@ namespace Assign01
         static void Main(string[] args)
         {
 
-            string file = "Tickets.txt";
+            string file = "Tickets.csv";
             string userChoice;
             do
             {
