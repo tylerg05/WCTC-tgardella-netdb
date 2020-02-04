@@ -117,11 +117,29 @@ namespace SleepData
                     {
                         month = "Dec";
                     }
+                    int total;
+                    double average;
+                    int hours1, hours2, hours3, hours4, hours5, hours6, hours7;
+                    hours1 = Convert.ToInt32(nums[0]);
+                    hours2 = Convert.ToInt32(nums[1]);
+                    hours3 = Convert.ToInt32(nums[2]);
+                    hours4 = Convert.ToInt32(nums[3]);
+                    hours5 = Convert.ToInt32(nums[4]);
+                    hours6 = Convert.ToInt32(nums[5]);
+                    hours7 = Convert.ToInt32(nums[6]);
+                    total = hours1 + hours2 + hours3 + hours4 + hours5 + hours6 + hours7;
+                    average = total / 7.0;
+                    int day;
+                    day = Convert.ToInt32(dates[1]);
+                    if (day < 10)
+                    {
+                        dates[1] = "0" + dates[1];
+                    }
                     Console.WriteLine("");
                     Console.WriteLine("Week of {0,3}, {1,2}, {2,4}", month, dates[1], dates[2]);
-                    Console.WriteLine(" Su Mo Tu We Th Fr Sa");
-                    Console.WriteLine(" -- -- -- -- -- -- --");
-                    Console.WriteLine("{0,3}{1,3}{2,3}{3,3}{4,3}{5,3}{6,3}", nums[0], nums[1], nums[2], nums[3], nums[4], nums[5], nums[6]);
+                    Console.WriteLine(" Su Mo Tu We Th Fr Sa Tot Avg");
+                    Console.WriteLine(" -- -- -- -- -- -- -- --- ---");
+                    Console.WriteLine("{0,3}{1,3}{2,3}{3,3}{4,3}{5,3}{6,3}{7,4}{8,4:n1}", hours1, hours2, hours3, hours4, hours5, hours6, hours7, total, average);
                 }
                 Console.WriteLine("");
             }
