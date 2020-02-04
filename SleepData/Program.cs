@@ -63,11 +63,13 @@ namespace SleepData
                 StreamReader sr = new StreamReader(file);
                 while (!sr.EndOfStream)
                 {
+                    // splitting file
                     string week = sr.ReadLine();
                     string[] arr = week.Split(',');
                     string date = arr[0];
                     string[] dates = date.Split('/');
                     string[] nums = arr[1].Split('|');
+                    // decide month
                     string month = "";
                     if (dates[0].Equals("1"))
                     {
@@ -120,6 +122,7 @@ namespace SleepData
                     int total;
                     double average;
                     int hours1, hours2, hours3, hours4, hours5, hours6, hours7;
+                    // convert to ints for math
                     hours1 = Convert.ToInt32(nums[0]);
                     hours2 = Convert.ToInt32(nums[1]);
                     hours3 = Convert.ToInt32(nums[2]);
@@ -127,14 +130,17 @@ namespace SleepData
                     hours5 = Convert.ToInt32(nums[4]);
                     hours6 = Convert.ToInt32(nums[5]);
                     hours7 = Convert.ToInt32(nums[6]);
+                    // calculating avg and total
                     total = hours1 + hours2 + hours3 + hours4 + hours5 + hours6 + hours7;
                     average = total / 7.0;
                     int day;
                     day = Convert.ToInt32(dates[1]);
+                    // add a 0 in front of the day number if it is less than 10
                     if (day < 10)
                     {
                         dates[1] = "0" + dates[1];
                     }
+                    // output
                     Console.WriteLine("");
                     Console.WriteLine("Week of {0,3}, {1,2}, {2,4}", month, dates[1], dates[2]);
                     Console.WriteLine(" Su Mo Tu We Th Fr Sa Tot Avg");
