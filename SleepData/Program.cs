@@ -15,7 +15,8 @@ namespace SleepData
             string resp = Console.ReadLine();
 
             // specify path for data file
-            string file = "/users/jgrissom/downloads/data.txt";
+            /*string file = "/users/jgrissom/downloads/data.txt";*/
+            string file = AppDomain.CurrentDomain.BaseDirectory + "data.txt";
 
             if (resp == "1")
             {
@@ -59,7 +60,70 @@ namespace SleepData
             else if (resp == "2")
             {
                 // TODO: parse data file
-
+                StreamReader sr = new StreamReader(file);
+                while (!sr.EndOfStream)
+                {
+                    string week = sr.ReadLine();
+                    string[] arr = week.Split(',');
+                    string date = arr[0];
+                    string[] dates = date.Split('/');
+                    string[] nums = arr[1].Split('|');
+                    string month = "";
+                    if (dates[0].Equals("1"))
+                    {
+                        month = "Jan";
+                    }
+                    else if (dates[0].Equals("2"))
+                    {
+                        month = "Feb";
+                    }
+                    else if (dates[0].Equals("3"))
+                    {
+                        month = "Mar";
+                    }
+                    else if (dates[0].Equals("4"))
+                    {
+                        month = "Apr";
+                    }
+                    else if (dates[0].Equals("5"))
+                    {
+                        month = "May";
+                    }
+                    else if (dates[0].Equals("6"))
+                    {
+                        month = "Jun";
+                    }
+                    else if (dates[0].Equals("7"))
+                    {
+                        month = "Jul";
+                    }
+                    else if (dates[0].Equals("8"))
+                    {
+                        month = "Aug";
+                    }
+                    else if (dates[0].Equals("9"))
+                    {
+                        month = "Sep";
+                    }
+                    else if (dates[0].Equals("10"))
+                    {
+                        month = "Oct";
+                    }
+                    else if (dates[0].Equals("11"))
+                    {
+                        month = "Nov";
+                    }
+                    else
+                    {
+                        month = "Dec";
+                    }
+                    Console.WriteLine("");
+                    Console.WriteLine("Week of {0,3}, {1,2}, {2,4}", month, dates[1], dates[2]);
+                    Console.WriteLine(" Su Mo Tu We Th Fr Sa");
+                    Console.WriteLine(" -- -- -- -- -- -- --");
+                    Console.WriteLine("{0,3}{1,3}{2,3}{3,3}{4,3}{5,3}{6,3}", nums[0], nums[1], nums[2], nums[3], nums[4], nums[5], nums[6]);
+                }
+                Console.WriteLine("");
             }
         }
     }
