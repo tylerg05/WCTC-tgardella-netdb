@@ -6,13 +6,42 @@ namespace YourName
     {
         public static void Main(string[] args)
         {
-            // display a literal value
-            Console.WriteLine("What is your name?");
-            // input a value and assign it to a string variable
-            string name = Console.ReadLine();
-            // display the string variable
-            Console.WriteLine("Hello, " + name);
-            Console.WriteLine("Hello, {0}", name);
+            Phone phone = new Phone();
         }
+    }
+
+    public class Phone
+    {
+        // prop tab tab
+        public int Number { get; set; }
+
+        public string Color { get; set; }
+
+        public string Manufacturer { get; set; }
+
+        public Phone()
+        {
+            Number = 262378902;
+            Color = "black";
+            Manufacturer = "Samsung";
+        }
+
+        public Phone (int number, string color, string manu)
+        {
+            Number = number;
+            Color = color;
+            Manufacturer = manu;
+        }
+
+
+        // prop full
+/*        private int _number;
+
+        public int Number
+        {
+            get { return _number; }
+            set { _number = value; }
+        }*/
+
     }
 }
