@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Tickets
 {
-    class Ticket
+    class Ticket : Base
     {
+
+        public string severity { get; set; }
 
         public string Menu()
         {
