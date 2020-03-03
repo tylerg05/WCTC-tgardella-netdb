@@ -17,7 +17,7 @@ namespace Tickets
             {
                 userChoice = ticket.Menu();
                 ticket.decision(userChoice);
-            } while (userChoice == "1" || userChoice == "2");
+            } while (userChoice == "1" || userChoice == "2" || userChoice == "3" || userChoice == "4" || userChoice == "5");
         }
     }
 }
